@@ -29,7 +29,7 @@ echo "Started: $(date)"
 echo "CPUs: $SLURM_CPUS_PER_TASK"
 echo "=========================================="
 
-python 04_benchmark.py
+python ../scripts/04_benchmark.py
 
 echo ""
 echo "Completed: $(date)"

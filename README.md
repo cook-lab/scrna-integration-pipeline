@@ -35,16 +35,10 @@ git clone https://github.com/[your-username]/scrna-integration-pipeline.git
 cd scrna-integration-pipeline
 
 # Install dependencies
-pip install scanpy scvi-tools anndata pandas numpy scipy matplotlib seaborn scikit-learn
+pip install scanpy scvi-tools anndata pandas numpy scipy matplotlib seaborn scikit-learn harmonypy
 pip install scib scib-metrics  # Optional, for integration benchmarking
 ```
-
-### Directory Setup
-
-```bash
-mkdir -p output/{anndata,cellassign,embeddings,models,benchmark}
-mkdir -p data/markers
-```
+Alternatively, set up a virtual environment as described in [DRAC_SETUP.md](DRAC_SETUP.md)
 
 ### Running on DRAC/Nibi Cluster
 
@@ -53,6 +47,8 @@ mkdir -p data/markers
 chmod +x *.sh
 
 Job submission scripts are expected to be submitted from the `slurm/` directory. They will use the relative path to access the appropriate python scripts.
+
+Currently, file paths are hardcoded into the individual python scripts in `scripts/`. Modify these according to your specific design.
 
 # Submit entire pipeline with automatic dependencies
 ./submit_pipeline.sh
@@ -138,6 +134,3 @@ See the [references](docs/references.md) for full citations.
 
 MIT License - see [LICENSE](LICENSE) file for details.
 
-## Contributing
-
-We welcome contributions from lab members! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
