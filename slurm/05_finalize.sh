@@ -21,7 +21,7 @@ METHOD=${1:-scanvi}
 
 module load StdEnv/2023 python/3.11
 
-source ~/envs/scrna_integration/bin/activate
+source ~/projects/def-dcook/bin/scvi-tools/bin/activate
 
 echo "=========================================="
 echo "Job: $SLURM_JOB_NAME"

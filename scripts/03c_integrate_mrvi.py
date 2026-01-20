@@ -10,7 +10,6 @@ MODEL_DIR = f"{OUTPUT_DIR}/models/mrvi"
 EMBEDDING_NPZ = f"{OUTPUT_DIR}/embeddings/mrvi/embedding.npz"
 SAMPLE_KEY = "sample_id"     # Target covariate (what you compare)
 BATCH_KEY = None             # Set if you have separate technical batches
-N_LATENT = 30
 # =========================
 
 import scanpy as sc
@@ -61,8 +60,7 @@ MRVI.setup_anndata(
 )
 
 mrvi = MRVI(
-    adata,
-    n_latent=N_LATENT
+    adata
 )
 
 print(f"   Latent dimensions: {N_LATENT}")
@@ -104,7 +102,6 @@ metadata = {
     "n_cells": int(adata.n_obs),
     "n_genes": int(adata.n_vars),
     "n_samples": int(adata.obs[SAMPLE_KEY].nunique()),
-    "n_latent": N_LATENT,
     "sample_key": SAMPLE_KEY,
     "batch_key": BATCH_KEY,
     "embeddings_saved": ["u", "z"],

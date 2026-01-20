@@ -16,7 +16,7 @@
 
 module load StdEnv/2023 python/3.11 cuda/12.9
 
-source ~/envs/scrna_integration/bin/activate
+source ~/projects/def-dcook/bin/scvi-tools/bin/activate
 
 echo "=========================================="
 echo "Job: $SLURM_JOB_NAME"
