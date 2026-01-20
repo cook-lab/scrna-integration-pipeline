@@ -63,7 +63,6 @@ mrvi = MRVI(
     adata
 )
 
-print(f"   Latent dimensions: {N_LATENT}")
 print(f"   Samples (target covariate): {adata.obs[SAMPLE_KEY].nunique()}")
 
 # Train model
